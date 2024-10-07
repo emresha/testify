@@ -16,7 +16,7 @@ create_test_files() {
         exit 1
     fi
 
-    for i in $(seq -w 1 $count); do
+    for i in $(seq -f "%02g" 1 $count); do
         touch "${prefix}_${i}_in.txt"
         touch "${prefix}_${i}_out.txt"
         if [ "$args_needed" == "yes" ]; then
